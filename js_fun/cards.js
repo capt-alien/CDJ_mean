@@ -24,21 +24,21 @@ The Player should be able to discard a Card
 */
 // 1) ceate vars for suit and string/numarical
 var suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
-var stringNum = {
-                "ace": 1,
-                "two": 2,
-                "three": 3,
-                "four": 4,
-                "five": 5,
-                "six": 6,
-                "seven":7,
-                "eight":8,
-                "nine": 9,
-                "ten": 10,
-                "jack": 11,
-                "queen":12,
-                "king":13
-                }
+var strings = [
+                "ace",
+                "two",
+                "three",
+                "four",
+                "five",
+                "six",
+                "seven",
+                "eight",
+                "nine",
+                "ten",
+                "jack",
+                "queen",
+                "king"
+            ]
 // 2) create a card class
 class Card{
     constructor(suit, string, number){
@@ -52,4 +52,20 @@ class Card{
     }
 }
 // 1) Create a deck class
-function
+class Deck{
+    constructor(){
+        this.deck = []
+        // For loop to itterate through the suites
+            // for loop for numbers
+        for(var i =0; i< suits.length; i++ ){
+            for(var j=0; j< strings.length; j++){
+                new_card = new Card(suits[i],strings[j], (j+1));
+                new_card.show();
+                this.deck.push(new_card)
+            }
+        }
+        // other functions here
+    }
+}
+x_deck = new Deck()
+console.log(x_deck.deck.length)
