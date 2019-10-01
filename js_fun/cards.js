@@ -60,25 +60,27 @@ class Deck{
         for(var i =0; i< suits.length; i++ ){
             for(var j=0; j< strings.length; j++){
                 new_card = new Card(suits[i],strings[j], (j+1));
-                new_card.show();
                 this.deck.push(new_card)
             }
         }
+    }
         // other functions here
         shuffle(){
             var m = this.deck.length, t, i;
             // While there remain elements to shuffle…
-            while (m) {
+            while (m){
                 // Pick a remaining element…
                 i = Math.floor(Math.random() * m--);
-
                 // And swap it with the current element.
-                t = array[m];
+                t = this.deck[m];
                 this.deck[m] = this.deck[i];
                 this.deck[i] = t;
             }
             return this;
         }
-    }
-    x_deck = new Deck()
-    console.log(x_deck.deck.length)
+}
+x_deck = new Deck()
+x_deck.shuffle()
+for(var i=0; i< x_deck.deck.length; i++){
+  console.log(x_deck.deck[i].string +" of "+x_deck.deck[i].suit)
+}
