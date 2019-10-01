@@ -25,21 +25,31 @@ The Player should be able to discard a Card
 // 1) ceate vars for suit and string/numarical
 var suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
 var stringNum = {
-    "ace": 1,
-    "two": 2,
-    "three": 3,
-    "four": 4,
-    "five": 5,
-    "six": 6,
-    "seven":7,
-    "eight":8,
-    "nine": 9,
-    "ten": 10,
-    "jack": 11,
-    "queen":12,
-    "king":13
-}
+                "ace": 1,
+                "two": 2,
+                "three": 3,
+                "four": 4,
+                "five": 5,
+                "six": 6,
+                "seven":7,
+                "eight":8,
+                "nine": 9,
+                "ten": 10,
+                "jack": 11,
+                "queen":12,
+                "king":13
+                }
 // 2) create a card class
+class Card{
+    constructor(suit, string, number){
+    this.suit=suit;
+    this.string=string;
+    this.number=number;
+    }
 
-
+    show(){
+        console.log(this.string+" of "+this.suit)
+    }
+}
 // 1) Create a deck class
+function
