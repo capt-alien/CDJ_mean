@@ -55,6 +55,7 @@ class Card{
 class Deck{
     constructor(){
         this.deck = []
+        this.reset = []
         // For loop to itterate through the suites
         // for loop for numbers
         for(var i =0; i< suits.length; i++ ){
@@ -63,6 +64,7 @@ class Deck{
                 this.deck.push(new_card)
             }
         }
+        this.reset = this.deck
     }
         // other functions here
         shuffle(){
@@ -78,7 +80,23 @@ class Deck{
             }
             return this;
         }
-}
+        // reset method
+        reset(){
+            this.deck = this.reset
+            return this
+        }
+        // ranom card method
+        randomCard(){
+            i = Math.floor(Math.randome()*this.deck.length)
+            target = this.deck[i]
+            delete this.deck[i]
+            return target
+        }
+        length(){
+            return this.deck.length
+        }
+
+    }
 x_deck = new Deck()
 x_deck.shuffle()
 for(var i=0; i< x_deck.deck.length; i++){
