@@ -95,13 +95,41 @@ class Deck{
         length(){
             return this.deck.length
         }
+        deal(){
+            return this.deck.pop()
+        }
 
     }
+
+class Player{
+    constructor(name, deck){
+        this.name = name
+        this.deck = deck
+        this.hand = []
+
+        for(var i=0; i<8;i++){
+            this.hand.push(this.deck.randomCard())
+        }
+    }
+    // METHODS GO HERE
+    viewHand(){
+        for(var x=0; x< this.hand.length-1; x++){
+            console.log(this.hand[x].string+" of "+this.hand[x].suit)
+        }
+    }
+    takeCard(){
+        this.hand.push(this.deck.deal())
+    }
+    tossCard(){
+      this.hand.pop()
+      return this
+    }
+}
+
+
 x_deck = new Deck()
 x_deck.shuffle()
-console.log(x_deck.length())
-// for(var i=0; i< x_deck.deck.length; i++){
-//   console.log(x_deck.deck[i].string +" of "+x_deck.deck[i].suit)
-// }
-console.log(x_deck.randomCard())
-console.log(x_deck.length())
+paul = new Player("Paul", x_deck)
+paul.viewHand()
+paul.takeCard()
+paul.viewHand()
