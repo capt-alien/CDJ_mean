@@ -81,13 +81,13 @@ class Deck{
             return this;
         }
         // reset method
-        reset(){
+        resetDeck(){
             this.deck = this.reset
             return this
         }
         // ranom card method
         randomCard(){
-            i = Math.floor(Math.randome()*this.deck.length)
+            i = Math.floor(Math.random()*this.deck.length)
             target = this.deck[i]
             delete this.deck[i]
             return target
@@ -99,6 +99,9 @@ class Deck{
     }
 x_deck = new Deck()
 x_deck.shuffle()
-for(var i=0; i< x_deck.deck.length; i++){
-  console.log(x_deck.deck[i].string +" of "+x_deck.deck[i].suit)
-}
+console.log(x_deck.length())
+// for(var i=0; i< x_deck.deck.length; i++){
+//   console.log(x_deck.deck[i].string +" of "+x_deck.deck[i].suit)
+// }
+console.log(x_deck.randomCard())
+console.log(x_deck.length())
