@@ -25,26 +25,26 @@ The Player should be able to discard a Card
 // 1) ceate vars for suit and string/numarical
 var suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
 var strings = [
-                "ace",
-                "two",
-                "three",
-                "four",
-                "five",
-                "six",
-                "seven",
-                "eight",
-                "nine",
-                "ten",
-                "jack",
-                "queen",
-                "king"
-            ]
+    "ace",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "jack",
+    "queen",
+    "king"
+]
 // 2) create a card class
 class Card{
     constructor(suit, string, number){
-    this.suit=suit;
-    this.string=string;
-    this.number=number;
+        this.suit=suit;
+        this.string=string;
+        this.number=number;
     }
 
     show(){
@@ -56,7 +56,7 @@ class Deck{
     constructor(){
         this.deck = []
         // For loop to itterate through the suites
-            // for loop for numbers
+        // for loop for numbers
         for(var i =0; i< suits.length; i++ ){
             for(var j=0; j< strings.length; j++){
                 new_card = new Card(suits[i],strings[j], (j+1));
@@ -65,7 +65,20 @@ class Deck{
             }
         }
         // other functions here
+        shuffle(){
+            var m = this.deck.length, t, i;
+            // While there remain elements to shuffle…
+            while (m) {
+                // Pick a remaining element…
+                i = Math.floor(Math.random() * m--);
+
+                // And swap it with the current element.
+                t = array[m];
+                this.deck[m] = this.deck[i];
+                this.deck[i] = t;
+            }
+            return this;
+        }
     }
-}
-x_deck = new Deck()
-console.log(x_deck.deck.length)
+    x_deck = new Deck()
+    console.log(x_deck.deck.length)
