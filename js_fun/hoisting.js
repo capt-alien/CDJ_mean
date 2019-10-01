@@ -126,3 +126,7 @@ function learn() {
 	console.log(dojo);
 }
 console.log(dojo);
+
+
+
+// 8)
