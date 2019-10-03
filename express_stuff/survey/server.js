@@ -1,13 +1,14 @@
 const express = require("express");
 const session = require('express-session');
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+const bodyParser = require('body-parser');
 
 // Pluggins
 
 app.use(express.static(__dirname + "/static"));
-const bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set('views', __dirname + '/views');
 app.use(session({
   secret: 'keyboardkitteh',
@@ -23,26 +24,26 @@ app.get('/', (req, res) => {
 });
 
 // Post to session
-app.post('/submit', req, res) =>{
+app.post('/submit', (req, res) =>{
     req.session.name = req.body.name;
     req.session.location = req.body.location;
     req.session.language = req.body.language;
     req.session.comment = req.body.comment;
     console.log(req.session);
-    res.redirect('/results');
-}
+    res.redirect('/result');
+});
 
 // results(submit session data)
-app.get('/result', req, res) => {
+app.get('/result', (req, res) => {
     info = {
             'name': req.session.name,
             'location': req.session.location,
             'language': req.session.language,
             'comment': req.session.comment
             }
-    console.log(context);
+    console.log(info);
     res.render('result', info);
-}
+})
 
 
 app.listen(3030, () => console.log("Deltron rippin' it on port 3030"));
