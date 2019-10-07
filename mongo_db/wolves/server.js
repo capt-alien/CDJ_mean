@@ -47,6 +47,22 @@ app.post('/wolves/submit', (req, res) =>{
     res.redirect('/')
 })
 
+// SHOW
+app.get('/wolves/:id', (req, res) => {
+    console.log(req.params.id);
+    Wolf.findById(req.params.id);
+    console.log(data);
+    .then( function(data) ={
+        res.render('wolf', {wolf: data})
+    })
+    .catch(function(err){
+        console.log(err);
+        res.redirect('/')
+    })
+})
+
+// EDIT
+
 
 
 app.listen(3030, () => console.log("listening on 3030"));
