@@ -1,0 +1,11 @@
+steps to finish
+
+1) create server
+
+2) create index routes
+
+3) create show routes
+
+4) create a mongo db
+
+5) save to mongodb
