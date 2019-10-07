@@ -1,10 +1,10 @@
 {
   "name": "quoting",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,10 @@
     "body-parser": "^1.19.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "express-sessions": "^1.0.6"
-  }
+    "express-sessions": "^1.0.6",
+    "mongoose": "^5.7.3"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }
