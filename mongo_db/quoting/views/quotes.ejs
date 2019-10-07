@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Quotes</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <!-- <style>
+    </style> -->
+</head>
+<body>
+
+    <h1>Here are those goddamn quotes!!!</h1>
+
+    <div id='container'>
+        <!-- <P>something some old guy said</p> -->
+        <% for(let quote of quotes)  { %>
+            <p> Quote:  <%= quote.quote %> </p>
+            <p> Name:  <%= quote.name %> at <%= quote.createdAt %> </p>
+
+            <% } %>
+
+
+    </div>
+
+
+</body>
+</html>
