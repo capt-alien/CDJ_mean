@@ -45,7 +45,7 @@ app.get('/wolves/new', (req, res) => {
 app.post('/wolves/submit', (req, res) =>{
     console.log(req.body);
     Wolf.create(req.body);
-    console.log("Murder Puppers Created")
+    console.log("Puppers Created")
     res.redirect('/')
 })
 
@@ -93,7 +93,7 @@ app.post('/wolves/edit/:id/submit', (req, res)=>{
 app.post('/wolves/delete/:id', (req, res)=>{
         Wolf.remove({_id:req.params.id})
         .then(function(){
-            console.log("wolf Euthanized")
+            console.log("wolf object euthanized")
             res.redirect('/')
         })
         .catch(function(err){
