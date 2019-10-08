@@ -8,15 +8,20 @@
 </head>
 <body>
 
-    <h1>Welcome to Pack Manager.com</h1>
+    <h1>Welcome to Murder Dog Manager.com</h1>
 
-
+    <p1><a href='/'>Take me home!!</a></p1>
         <!-- <P>something some old guy said</p> -->
-            <div id='container'>
+        <div id='container'>
                 <p> Name:  <%= wolf.name %> </p>
                 <p> Age:  <%= wolf.age %>  </p>
                 <p> Entered Pack on:  <%= wolf.createdAt %> </p>
             </div>
 
+            <p1><a href='/wolves/:id/edit'>Edit</a></p1>
+
+
 </body>
 </html>
+
+<a href='wolves/<%= wolf._id %>'>

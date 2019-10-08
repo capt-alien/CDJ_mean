@@ -50,9 +50,8 @@ app.post('/wolves/submit', (req, res) =>{
 // SHOW
 app.get('/wolves/:id', (req, res) => {
     console.log(req.params.id);
-    Wolf.findById(req.params.id);
-    console.log(data);
-    .then( function(data) ={
+    Wolf.findOne({_id:req.params.id})
+    .then( function(data){
         res.render('wolf', {wolf: data})
     })
     .catch(function(err){
@@ -62,6 +61,16 @@ app.get('/wolves/:id', (req, res) => {
 })
 
 // EDIT
+app.get('/wolves/:id/edit', (req, res)=>{
+    Wolf.findOne({_id:req.params.id})
+    .then( function(data){
+        res.render('edit', {wolf: data})
+    })
+    .catch(function(err){
+        console.log(err);
+        res.redirect('/wolves/:id')
+    })
+})
 
 
 

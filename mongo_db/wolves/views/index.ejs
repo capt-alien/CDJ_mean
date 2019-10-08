@@ -2,26 +2,22 @@
 <html>
 <head>
     <title>Wolf Pack Management</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <link rel="stylesheet" type="text/css" href="/styles.css" >
     <!-- <style>
     </style> -->
 </head>
 <body>
 
     <h1>Welcome to Pack Manager.com</h1>
-
-
-        <!-- <P>something some old guy said</p> -->
+        <p1><a href="/wolves/new"> New Murder Puppy</a></p>
         <% for(let wolf of wolves)  { %>
             <div id='container'>
                 <p> Name:  <%= wolf.name %> </p>
+                <p> ID:<a href='wolves/<%= wolf._id %>'> <%= wolf._id %> </a></p>
                 <p> Age:  <%= wolf.age %>  </p>
                 <p> Entered Pack on:  <%= wolf.createdAt %> </p>
             </div>
-
             <% } %>
-
-
 
 </body>
 </html>
