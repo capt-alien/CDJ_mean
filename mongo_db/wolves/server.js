@@ -92,7 +92,7 @@ app.post('/wolves/edit/:id/submit', (req, res)=>{
 // delete
 app.post('/wolves/delete/:id', (req, res)=>{
         Wolf.remove({_id:req.params.id})
-        .than(function(){
+        .then(function(){
             console.log("wolf Euthanized")
             res.redirect('/')
         })
