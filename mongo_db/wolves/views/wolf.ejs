@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Wolf Pack Management</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <link rel="stylesheet" type="text/css" href="/styles.css" >
     <!-- <style>
     </style> -->
 </head>
 <body>
 
-    <h1>Welcome to Murder Dog Manager.com</h1>
+    <h1>Welcome to Pack Manager.com</h1>
 
     <p1><a href='/'>Take me home!!</a></p1>
         <!-- <P>something some old guy said</p> -->
@@ -18,10 +18,18 @@
                 <p> Entered Pack on:  <%= wolf.createdAt %> </p>
             </div>
 
-            <p1><a href='/wolves/:id/edit'>Edit</a></p1>
+            <p1><a href='/wolves/edit/<%= wolf._id %>'>Edit</a></p1>
+
+            <!-- NEeds to be a form -->
+            <form action='/wolves/delete/<%= wolf._id %>' method='post'>
+                <input type='submit' value='Delete Pooch'>
+            </form>
+
+
+
 
 
 </body>
 </html>
 
-<a href='wolves/<%= wolf._id %>'>
+<!-- <a href='wolves/<%= wolf._id %>'> -->

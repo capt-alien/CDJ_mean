@@ -5,7 +5,9 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Model
-mongoose.connect('mongodb://localhost:27017/wolves', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/wolves',
+                                { useUnifiedTopology: true,
+                                    useNewUrlParser: true});
 let WolfSchema = new mongoose.Schema({
     name: {type: String},
     age: {type: Number, min:0, max:30},
@@ -49,7 +51,6 @@ app.post('/wolves/submit', (req, res) =>{
 
 // SHOW
 app.get('/wolves/:id', (req, res) => {
-    console.log(req.params.id);
     Wolf.findOne({_id:req.params.id})
     .then( function(data){
         res.render('wolf', {wolf: data})
@@ -61,7 +62,7 @@ app.get('/wolves/:id', (req, res) => {
 })
 
 // EDIT
-app.get('/wolves/:id/edit', (req, res)=>{
+app.get('/wolves/edit/:id', (req, res)=>{
     Wolf.findOne({_id:req.params.id})
     .then( function(data){
         res.render('edit', {wolf: data})
@@ -72,6 +73,36 @@ app.get('/wolves/:id/edit', (req, res)=>{
     })
 })
 
+// ???Put method????
+app.post('/wolves/edit/:id/submit', (req, res)=>{
+    Wolf.updateOne({_id:req.params.id},{
+        name:req.body.name,
+        age: req.body.age
+    })
+    .then(function(){
+        res.redirect('/')
+    })
+    .catch(function(err){
+        console.log(err);
+        res.redirect('/')
+    })
+}  )
+
+
+// delete
+app.post('/wolves/delete/:id', (req, res)=>{
+        Wolf.remove({_id:req.params.id})
+        .than(function(){
+            console.log("wolf Euthanized")
+            res.redirect('/')
+        })
+        .catch(function(err){
+            console.log(err);
+            res.redirect('/')
+
+        })
+
+})
 
 
 app.listen(3030, () => console.log("listening on 3030"));

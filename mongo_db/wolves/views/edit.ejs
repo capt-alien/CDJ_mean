@@ -1,18 +1,18 @@
 <html>
 <head>
     <title>Wolf Pack Management</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <link rel="stylesheet" type="text/css" href="/styles.css" >
     <!-- <style>
     </style> -->
 </head>
 <body>
 
-    <h1>Edit Yer' murder pupers</h1>
+    <h1>Edit Yer' Murder Pupers</h1>
 
-    <div class='pen'>
-    <form action='/wolves/submit' method='post'>
-        <div class='s_inputs_bl'>Name: <input type="text" name="name" value=""></div>
-        <div class='s_inputs_bl'>Age: <input type="number" name="age" value=""></div>
+    <div id='container'>
+    <form action='/wolves/edit/<%= wolf._id %>/submit' method='post'>
+        <div class='s_inputs_bl'>Name: <input type="text" name="name" value="<%= wolf.name %>"></div>
+        <div class='s_inputs_bl'>Age: <input type="number" name="age" value="<%= wolf.age %>"></div>
         <input type='submit' value='Submit'>
     </form>
 
