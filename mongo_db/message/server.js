@@ -18,10 +18,15 @@ app.set(path.join('views', './views'));
 // Routes
 // index
 app.get('/', (req, res)=>{
-    res.send("Twearkin up a storm")
+    res.render('index')
 })
 
 // end
 app.listen(PORT, function(){
     console.log('Tearin it up on port 3030')
 })
+
+// Post message Routes
+
+
+// post comment route
