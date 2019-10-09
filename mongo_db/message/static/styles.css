@@ -25,6 +25,8 @@ p1{
 }
 
 .pen{
+    margin-top: 10px;
+    margin-left: 100px;
     border-radius: 20px;
     border-color: blue;
     height:auto;
@@ -34,5 +36,5 @@ p1{
 
 .s_inputs_bl{
     display: block;
-    margin-top: 50px;
+    margin-top: 10px;
 }

@@ -4,15 +4,40 @@
     <title>Passive Agressive Message Board</title>
     <link rel="stylesheet" type="text/css" href="/styles.css" >
     <!-- <style>
-    </style> -->
+</style> -->
 </head>
 <body>
 
     <h1> Welcome to "Our" Passive Agressive Message Board</h1>
     <hr>
-    
-<p1> sup World!!</p1>
 
+    <div class="container">
+    <div class='pen'>
+        <h3> Say Somthing!!! </h3>
+        <form action='/message' method='post'>
+            <div class='s_inputs_bl'>Name: <input type="text" name="name" value=""></div>
+            <div class='s_inputs_bl'>Message: <input type="text" name="message" value=""></div>
+            <input type='submit' value='Submit'>
+        </form>
+    </div>
+
+    <hr>
+
+
+        <% for(let message of messages) {  %>
+            <div class='pen'>
+
+
+            <p>Name: <%= message.name %> </p>
+            <p>Message: <%= message.message %> </p>
+
+
+        </div>
+
+        <% } %>
+
+
+</div>
 
 
 
