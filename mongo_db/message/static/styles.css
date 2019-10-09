@@ -31,7 +31,15 @@ p1{
     border-color: blue;
     height:auto;
     width: 400px;
-
+}
+.comment{
+    margin-top: 5px;
+    margin-left: 100px;
+    border-radius: 20px;
+    border-color: black;
+    font-size: 10px;
+    height:auto;
+    width: 400px;
 }
 
 .s_inputs_bl{
