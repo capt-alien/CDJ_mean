@@ -6,6 +6,12 @@ PORT="3030"
 // Instanciate app
 let app = express()
 
+// load parser
+app.use(parser.json())
+app.use(parser.urlencoded({ extended: true }));
+
+require('./server/config/database.js');
+require('./server/config/routes.js')(app);
 
 
 // App.listen
