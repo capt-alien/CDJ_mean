@@ -22,8 +22,8 @@ module.exports = {
         .catch(errorHandler.bind(res));
     },
     // update
-    update(req,res){
-        Task.findOneAndUpdate({_id:req.params.id}, req.body, {new:true})
+    update(req, res) {
+      Task.findOneAndUpdate({_id: req.params.id}, req.body, { new: true })
         .then(task => res.json(task))
         .catch(errorHandler.bind(res));
     },

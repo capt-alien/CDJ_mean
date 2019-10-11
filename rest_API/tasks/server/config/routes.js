@@ -5,7 +5,7 @@ module.exports = function(app){
     // post
     app.post('/tasks/', tasks.create)
     // get one
-    app.post('/tasks/:id', tasks.show)
+    app.get('/tasks/:id', tasks.show)
     // update
     app.put('/tasks/:id', tasks.update)
     // delete
