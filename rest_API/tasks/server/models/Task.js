@@ -14,10 +14,11 @@ let taskSchema = new Schema({
         default: ""
     },
     completed:{
-        type: Boolian,
+        type: Boolean,
         required:true,
         default:false
     },
 }, {timestamp:true});
 
+// Model
 mongoose.model('Task', taskSchema);

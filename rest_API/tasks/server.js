@@ -1,4 +1,4 @@
-let express     =require('exrpress'),
+let express     =require('express'),
     parser      = require('body-parser'),
     path        = require('path');
 
